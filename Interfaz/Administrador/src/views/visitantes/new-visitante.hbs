@@ -1,0 +1,262 @@
+
+    <header class="row" style="position: relative; height: 50vh; width: 100%;"  >
+        <div
+          class="col s12 m11 l9 xl8 "
+          style="position: absolute; top: 0px; height: 60%; left: 0px;"
+        >
+          <img
+            alt="imagen1"
+            src="/img/rec4.png"
+            class="responsive-image" 
+            style="height: 200%; width: 80%; left: 0px; top: 0px; position: absolute; object-fit: cover;"
+          />
+        </div>
+        <div class="col s12 m9 l9 xl8 white-text" 
+             style="position: absolute; top: 50%; left: 30%; height: 100%; transform: translate(-50%, -50%); width: 50%;"
+        >
+        <br>
+              <br>
+            <blockquote>
+              
+              <h2 class="subtitulo black-text ">
+                <b>
+                  Aquí puedes añadir nuevo usuario <br /> como Visitante
+                </b>
+              </h2>
+            </blockquote>
+        </div>
+        
+        <div class="col m6 l6 xl5 hide-on-small-only" style="height: 100%; position: absolute; top: 0%; right: 0%;">
+          <img alt="" src="/img/parteba9.png" 
+          class="responsive-img" style="position: absolute; right: -5px; top: 0px; height: 100%; width: 50%;">
+        </div>  
+    </header>
+      <br />
+      <br />
+      <br />
+      <div class="row justify-content-end">
+        <div class="col-3 align-self-end">
+          <a class="waves-effect waves-light text-white btn p-2 text-center  " style="background: rgb(29, 240, 134);border-radius: 20px;"
+                    href="javascript:window.history.back(); "
+                > 
+            <i class="material-icons  text-white large rounded-circle btn p-2 text-center">arrow_back
+            </i>       Regresar              
+          </a>
+        </div>
+      </div>
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header bg-success text-center" style="--bs-bg-opacity: .7;">
+      <h3 class="text-white">Nuevo visitante</h3>
+    </div>
+    <div class="card-body text-left bg-success "style="--bs-bg-opacity: .3;">
+      <form action="/visitantes/new-visitante" method="POST"  enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            class="form-control"
+            placeholder="Nombre Apellido Paterno Apellido Marterno"
+            autofocus
+          />
+        </div>
+        <div class="mb-3">
+          <label for="curp">Curp:</label>
+          <input
+            type="text"
+            name="curp"
+            class="form-control"
+            placeholder="Curp"
+            autofocus
+          />
+        </div>
+        <div class="mb-3">
+          <label for="telefono">No. Teléfono:</label>
+          <input
+            type="text"
+            name="telefono"
+            class="form-control"
+            placeholder="5501030205"
+          autofocus
+          />
+        </div>
+        <div class="mb-3">
+          <label for="correo">Correo:</label>
+          <textarea
+            name="correo"
+            class="form-control"
+            placeholder="someone@axample.com"
+          ></textarea>
+        <div class="mb-3">
+          <label for="nombreInquilino">Nombre de Inquilino:</label>
+          <input
+            type="text"
+            name="nombreInquilino"
+            class="form-control"
+            placeholder="Nombre de Inquilino"
+            autofocus
+          />
+        </div>
+        <div class="mb-3">
+          <label for="parentesco">Parentesco:</label>
+          <input
+            type="text"
+            name="parentesco"
+            class="form-control"
+            placeholder="Parentesco"
+            autofocus
+          />
+        </div>
+        </div>
+        <h4 class="text-dark">Datos Biométricos</h4>
+          <div class="row text-center">
+            <div class="col-4">
+              <label for="confirm_password"> Foto:</label>
+              <!-- Button trigger modal  -->
+              <a class="waves-effect waves-light text-dark btn p-2 text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                   style="border-radius: 30px;" 
+                >
+                <i class="material-icons small rounded-circle " style="font-size:90px;"> 📷 
+                </i> 
+                <!-- photo_camera -->                     
+              </a>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content text-dark">
+                  <div class="modal-header bg-success" style="--bs-bg-opacity: .5;">
+                    <h1 class="modal-title" id="staticBackdropLabel">Captura el rostro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                       <div class="container">
+                          <div class="row">
+                              <div class="col ">
+                                
+                                  Aqui se hace la captura de imágenes del rostro
+                                  <br>
+                               <div class="input-group" >
+                                    <input type="file" name="rostro" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
+                                      style="background: rgb(141, 185, 232);"
+                                      > 
+                                </div> 
+                                <div class="col ">
+                                <br>
+                                <div id="my_camera"></div>
+                                <input type=button value="Take Snapshot" onClick="take_snapshot()">  
+                                <div id="results" >HOLA</div>
+
+                                <input type="text" id="demo" name="demo" demo="textValue" />
+
+                                <!-- Webcam.min.js -->
+                                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+                                <!-- Configure a few settings and attach camera  -->
+                                <script language="JavaScript">
+                                    Webcam.set({
+                                        width: 320,
+                                        height: 240,
+                                        image_format: 'jpeg',
+                                        jpeg_quality: 90
+                                    });
+                                    Webcam.attach( '#my_camera' );
+                                <!-- Code to handle taking the snapshot and displaying it locally -->
+                                
+                                function take_snapshot() {
+                                    // take snapshot and get image data
+                                    Webcam.snap( function(data_uri) {
+                                        // display results in page
+                                        document.getElementById('results').innerHTML = 
+                                       '<img src="'+data_uri+'"/>';
+                                       
+                                       document.getElementById('demo').value =document.getElementById('results').innerHTML ;
+                                      /*
+                                      document.getElementById('demo').value = 
+                                                                              '<img src="'+data_uri+'"/>';*/
+                                        
+                                    } );                                        
+                                } 
+                                </script>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="modal-footer bg-success" style="--bs-bg-opacity: .5;">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="confirm_password">Huella:</label>
+              <a class="waves-effect waves-light text-dark btn p-2 text-center" style="" 
+                   href="#" style="border-radius: 30px;"
+                >
+                <i class="material-icons small rounded-circle " style="font-size:100px;">fingerprint
+                </i>
+              </a>
+            </div>
+             
+            <div class="col-4">
+              <label for="confirm_password">Voz:</label>
+              <a class="waves-effect waves-light text-dark btn p-2 text-center"  data-bs-toggle="modal" data-bs-target="#staticBackdrop3" style="border-radius: 30px;"
+                >
+                <i class="material-icons small rounded-circle " style="font-size:100px;">mic
+                </i>
+                
+                                   
+              </a>
+            </div> 
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content text-dark">
+                  <div class="modal-header bg-success" style="--bs-bg-opacity: .5;">
+                    <h1 class="modal-title" id="staticBackdropLabel">Captura la voz</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                       <div class="container">
+                          <div class="row">
+                              <div class="col ">
+                                
+                                  Aqui se hace la captura de voz
+                                  <br>
+                              
+                                <h1>Audio Clip Recorder</h1>
+                                <p><button id="record">Record</button></p>
+                                <div id="sound-clip"></div>
+                              
+                                <script src="/biometricos/voiceMemo.js"></script>
+
+                                  
+                              </div>
+                          </div>
+                        </div>
+                  </div>
+
+
+
+                  
+                  <div class="modal-footer bg-success" style="--bs-bg-opacity: .5;">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>    
+          
+
+
+          </div>
+        <button class="btn btn-success w-100" type="submit">
+          Guardar
+              <i class="material-icons "> save</i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

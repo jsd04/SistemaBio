@@ -1,0 +1,42 @@
+{
+  "name": "administrador",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "JessicaSD",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "fastify": "^4.18.0",
+    "fastify-static": "^4.7.0",
+    "fs": "^0.0.1-security",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.9.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-webcam": "^0.8.2",
+    "nodemailer": "^6.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "handlebars": "^4.7.7",
+    "nodemon": "^2.0.20",
+    "npm-check-updates": "^16.7.5"
+  }
+}

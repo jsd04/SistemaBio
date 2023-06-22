@@ -1,0 +1,172 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background: #fafafa;
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  color: #1a1a1a;
+}
+.logo {
+width: 30%;
+}
+.titulo{
+  color: #e0f2f1;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 70px;
+}
+.video {
+  width: 100%;
+
+}
+
+.navbar-brand {
+  font-family: 'Roboto Condensed /*Abyssinica SILSpicy Rice*//**/, cursive';
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-family: /*Roboto Condensed*/'Noto Sans Mono'/*Spicy Rice/**/;
+}
+
+header img {
+  width: 60%;
+}
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#my_camera{
+  width: 320px;
+  height: 240px;
+/*  border: 1px solid black;*/
+}
+
+
+main {
+  flex: 1 0 auto;
+}
+.bigContainer {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+.btn.active{
+  background-color: #966900;
+  background: #07a1d1;
+  color: white;
+}
+.btn.outlined {
+  background: rgb(169, 51, 51);
+  box-shadow: none;
+  color: #691900;
+  border: 1px solid #2e0089;
+}
+.btn-small {
+  text-transform: none;
+}
+.btn.outlined,
+.btn-large.outlined {
+  background: rgb(169, 51, 51);
+  box-shadow: none;
+  color: #00695c;
+  border: 1px solid #00891b;
+}
+.btn.outlined:hover,
+.btn-large.outlined:hover {
+  background: #3dd9d1;
+  border: 1px solid #00695c;
+}
+.ipn {
+  background: #821752;
+}
+.ipn-text {
+  color: #821752;
+}
+.btn-flat {
+  font-weight: 500;
+  text-transform: none;
+  color: #00897b;
+}
+.btn-flat:hover {
+  background: #f2f2f2;
+}
+blockquote {
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid #821752;
+}
+
+.tabs .tab a {
+  color: rgba(38, 166, 154, 1);
+}
+
+.tabs .tab a:hover {
+  color: #00897b;
+  background-color: #e0f2f1;
+}
+.tabs .tab a.active {
+  color: #009688;
+}
+
+.tabs .tab a:focus.active {
+  color: #637472;
+  background-color: rgba(38, 166, 154, 0.2);
+}
+
+.tabs .indicator {
+  background-color: #26a69a;
+}
+
+tbody tr:hover {
+  background: #e0f2f1 !important;
+}
+
+tbody tr {
+  font-size: 13px;
+  font-weight: 500;
+}
+.MenuActionContainer {
+  padding: 15px;
+  margin: 15px;
+}
+/*************************************************************/
+/* Tamaño del scroll */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 7px;
+  background: transparent;
+  /* display: none; */
+}
+/* Estilos barra (thumb) de scroll */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(27, 30, 50, 0.3);
+  background-color: #637472;
+  border-radius: 4px;
+  /* 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555; */
+}
+::-webkit-scrollbar-thumb:hover {
+  /* background: #00897b; */
+  background: #333;
+}
+/* Estilos track de scroll */
+::-webkit-scrollbar-track {
+  background-color: rgba(27, 30, 50, 0.15);
+  background-color: #e0f2f1;
+
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track:hover,
+::-webkit-scrollbar-track:active {
+  background: rgba(38, 166, 154, 0.2);
+}

@@ -1,0 +1,123 @@
+<header class="row" style="position: relative; height: 50vh; width: 100%;" >
+        <div
+          class="col s12 m11 l9 xl8 "
+          style="position: absolute; top: 0px; height: 110%; left: 0px;"
+        >
+          <img
+            alt="imagen1"
+            src="/img/ba11.png"
+            class="responsive-image" 
+            style="height: 120%; width: 80%; left: 0px; top: 0px; position: absolute; object-fit: cover;"
+          />
+        </div>
+        <div class="col s12 m9 l9 xl8 white-text" 
+             style="position: absolute; top: 50%; left: 30%; height: 100%; transform: translate(-50%, -50%); width: 50%;"
+        >
+            <h1 class="titulo">
+              EDICION DE <b>VISITANTES</b>
+            </h1>
+            <br>
+            <blockquote>
+              <h3 class="subtitulo black-text">
+                <b>
+                  Aquí puedes editar  la <br /> información de los <br /> visitantes
+                </b>
+              </h3>
+            </blockquote>
+        </div>
+        
+        <div class="col m6 l6 xl5 hide-on-small-only" style="height: 100%; position: absolute; top: 0%; right: 0%;">
+          <img alt="" src="/img/parteba8_2.png" 
+          class="responsive-img" style="position: absolute; right: 10px; top: 0px; height: 100%; width: 50%;">
+        </div>
+        
+      </header>
+      <br />
+      <br />
+      <br />
+      <div class="row justify-content-end">
+        <div class="col-3 align-self-end">
+          <a class="waves-effect waves-light text-white btn p-2 text-center  " style="background: rgb(29, 240, 134);border-radius: 20px;"
+                    href="javascript:window.history.back(); "
+                > 
+            <i class="material-icons  text-white large rounded-circle btn p-2 text-center">arrow_back
+            </i>       Regresar              
+          </a>
+        </div>
+      </div>
+    <br />
+{{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header bg-danger text-center " style="--bs-bg-opacity: .7;">
+      <h3>Editar Visitante</h3>
+    </div>
+    <div class="card-body bg-danger p-2" style="--bs-bg-opacity: .3;">
+      <form action="/visitantes/edit-visitante/{{visitante._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <div class="mb-3">
+          <label for="title">Nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            class="form-control"
+            value="{{visitante.nombre}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title">Curp:</label>
+          <input
+            type="text"
+            name="curp"
+            class="form-control"
+            value="{{visitante.curp}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description">No. Teléfono:</label>
+          <input
+            type="text"
+            name="telefono"
+            class="form-control"
+            value= "{{visitante.telefono}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description">Correo:</label>
+          <textarea
+            name="correo"
+            class="form-control"
+          >{{visitante.correo}}</textarea>
+        </div> <div class="mb-3">
+          <label for="title">Nombre de Inquilino:</label>
+          <input
+            type="text"
+            name="nombreInquilino"
+            class="form-control"
+            value="{{visitante.nombreInquilino}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description">Parentesco:</label>
+          <input
+            type="text"
+            name="parentesco"
+            class="form-control"
+            value= "{{visitante.parentesco}}"
+          />
+        </div>
+        <button class="btn btn-danger w-100" type="submit">
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
